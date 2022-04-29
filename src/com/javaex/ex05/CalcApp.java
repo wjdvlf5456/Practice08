@@ -14,10 +14,6 @@ public class CalcApp {
 			String arithmetic = sc.next();
 			int b = sc.nextInt();
 
-			System.out.print(a);
-			System.out.print(arithmetic);
-			System.out.print(b);
-
 			Add plus = new Add();
 			plus.setValue(a, b);
 
@@ -31,7 +27,7 @@ public class CalcApp {
 			divide.setValue(a, b);
 
 			// 연산결과
-			System.out.println(">> ");
+			System.out.print(">> ");
 			if (arithmetic.equals("+")) {
 				plus.calculate();
 
