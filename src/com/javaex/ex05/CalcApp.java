@@ -7,47 +7,47 @@ public class CalcApp {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
+
 		while (true) {
-
 			System.out.print(">> ");
-			int a = sc.nextInt();
-			String arithmetic = sc.next();
-			int b = sc.nextInt();
+			String text = sc.nextLine();
 
-			Add plus = new Add();
-			plus.setValue(a, b);
-
-			Sub minus = new Sub();
-			minus.setValue(a, b);
-
-			Mul multyply = new Mul();
-			multyply.setValue(a, b);
-
-			Div divide = new Div();
-			divide.setValue(a, b);
-
-			// 연산결과
-			System.out.print(">> ");
-			if (arithmetic.equals("+")) {
-				plus.calculate();
-
-			} else if (arithmetic.equals("-")) {
-				minus.calculate();
-
-			} else if (arithmetic.equals("*")) {
-				multyply.calculate();
-
-			} else if (arithmetic.equals("/")) {
-				divide.calculate();
-
-			} else if (arithmetic.equals("/q")) {
+			String[] textArray = text.split(" ");
+			if (textArray[0].equals("/q")) {
 				System.out.println("종료합니다.");
 				break;
-
 			} else {
-				System.out.println("알 수 없는 연산입니다.");
-			}
 
+				int a = Integer.parseInt(textArray[0]);
+				int b = Integer.parseInt(textArray[2]);
+
+				Add plus = new Add();
+				plus.setValue(a, b);
+
+				Sub minus = new Sub();
+				minus.setValue(a, b);
+
+				Mul multyply = new Mul();
+				multyply.setValue(a, b);
+
+				Div divide = new Div();
+				divide.setValue(a, b);
+
+				System.out.print(">> ");
+				if (textArray[1].equals("+")) {
+					plus.calculate();
+
+				} else if (textArray[1].equals("-")) {
+					minus.calculate();
+				} else if (textArray[1].equals("*")) {
+					multyply.calculate();
+				} else if (textArray[1].equals("/")) {
+					divide.calculate();
+				} else {
+					System.out.println("알 수 없는 연산입니다.");
+				}
+
+			}
 		}
 
 		sc.close();

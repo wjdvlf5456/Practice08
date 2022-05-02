@@ -10,29 +10,15 @@ public class SumApp {
 		System.out.println("숫자를 공백으로 구분해서 입력하세요");
 
 		// 코드를 작성하세요
-		/*int sum = 0;
-		while (true) {
-		
+		int sum = 0;
+
+		while (sc.hasNext()) {
+
 			String numLine = sc.next();
 			sum = sum + Integer.parseInt(numLine);
-		
-			if (numLine.equals("")) {
-				break;
-			}
-			System.out.println("합:" + sum);
-		
+
 		}
-		System.out.println("외곽: " + sum);
-		*/
-
-		int sum = 0;
-		do {
-
-			String numLine = sc.next();
-			sum += Integer.parseInt(numLine);
-
-		} while (sc.next().equals(null));
-		System.out.println(sum);
+		System.out.println("합:" + sum);
 
 		sc.close();
 	}
